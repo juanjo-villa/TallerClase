@@ -26,6 +26,11 @@ public class EntityManager<T> {
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
                 T instance = null;
+                try{
+                    Integer.parseInt(values[0]);
+                }catch (Exception exc){
+                    continue;
+                }
                 if (clazz == Persona.class) {
                     instance = (T) new Persona(Integer.parseInt(values[0]), values[1]);
                 } else if (clazz == Ciudad.class) {

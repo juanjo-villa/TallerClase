@@ -15,8 +15,8 @@ public class App
 {
     public static void main( String[] args )
     {
-        PersonaService personaService = new PersonaService("personas.csv");
-        CiudadService ciudadService = new CiudadService("ciudades.csv");
+        PersonaService personaService = new PersonaService("persona.csv");
+        CiudadService ciudadService = new CiudadService("Ciudad.csv");
 
         List<Persona> personas = personaService.obtenerTodasLasPersonas();
         personas.forEach(persona -> 
