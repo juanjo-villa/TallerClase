@@ -1,7 +1,19 @@
 package org.example.repository;
 
-import org.example.service.CiudadService;
+import java.util.List;
 
-public class CiudadRepository implements CiudadService {
-    
+import org.example.manager.EntityManager;
+import org.example.model.Ciudad;
+
+public class CiudadRepository {
+ 
+    private EntityManager<Ciudad> entityManager;
+
+    public CiudadRepository(String filePath) {
+        this.entityManager = new EntityManager<>(filePath);
+    }
+
+    public List<Ciudad> getAllCiudades() {
+        return entityManager.getAll(Ciudad.class);
+    }
 }
